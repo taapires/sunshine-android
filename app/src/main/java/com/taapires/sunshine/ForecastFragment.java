@@ -106,9 +106,7 @@ public class ForecastFragment extends Fragment {
                 String forecast = mForecastAdapter.getItem(position);
                 //Toast.makeText(getActivity(), forecast, Toast.LENGTH_SHORT).show();
                 // Executed in an Activity, so 'this' is the Context
-                Intent detailActivity = new Intent(getActivity(), DetailActivity.class);
-                //detailActivity.setData(Uri.parse(fileUrl));
-                //startService(detailActivity);
+                Intent detailActivity = new Intent(getActivity(), DetailActivity.class).putExtra(Intent.EXTRA_TEXT, forecast);
                 startActivity(detailActivity);
             }
         });
